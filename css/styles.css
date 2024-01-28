@@ -1,0 +1,19 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #cbd5f0;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    flex:1;
+    align-items: center;
+}
+
+.header-container{
+    font-size: 46px;
+    border: 2px solid rgb(49, 46, 46);
+    border-radius: 2%;
+    padding: 10px;
+}
