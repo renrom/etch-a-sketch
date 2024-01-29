@@ -16,4 +16,15 @@ body {
     border: 2px solid rgb(49, 46, 46);
     border-radius: 2%;
     padding: 10px;
+    margin-bottom: 20px;
+}
+
+.gridline {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.griditem {
+    border: 1px solid black;
 }
