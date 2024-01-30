@@ -2,15 +2,20 @@
 let gridSize = 16;
 let gridWidth = 900;
 
+// begin with a clean grid with a default size
+resetGrid();
 createGrid(gridSize);
 
 resetButton = document.querySelector(".resetbutton");
 gridsizeButton = document.querySelector(".gridsizebutton")
+randomcolorButton = document.querySelector(".randomcolor")
 
 resetButton.addEventListener("click", function () {
     resetGrid();
     createGrid(gridSize);
 });
+
+// Resize the grid with the prompted number, only accept numbers between 1 - 100
 
 gridsizeButton.addEventListener("click", function () {
         newGridSizePrompt = prompt("Please enter desires gridsize");
@@ -30,6 +35,10 @@ gridsizeButton.addEventListener("click", function () {
         resetGrid();
         createGrid(newGridSize);
 
+});
+
+randomcolorButton.addEventListener("click", function () {
+    randomcolor = true;
 });
 
 
@@ -56,7 +65,7 @@ function createGrid(gridSize) {
             newGridItem.style.borderTop = "1px solid black";
 
             // Add a nice afterglow effect
-            newGridItem.style.transition = "background 1s";
+            newGridItem.style.transition = "background 0.4s";
 
 
             // Add borderline to the right if the last item to the right
@@ -89,14 +98,19 @@ function createGrid(gridSize) {
         };
     };
 
-    // on the new griditems, add 2 eventhandlers, one for entering, one for leaving
+    // on the new griditems, add 2 eventhandlers, one for entering, one for leaving. 
     gridAllItems = document.querySelectorAll(".griditem");
     gridAllItems.forEach(gridItem => {
         gridItem.addEventListener("mouseenter", () => {
-            gridItem.style.backgroundColor = "black";
-            
 
+            if (!randomcolor) {
+                gridItem.style.backgroundColor = "black";
+            } else {
+
+                gridItem.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            }
         });
+        // this listener is not used (yet).
         gridItem.addEventListener("mouseleave", () => {
             
         });
@@ -104,11 +118,10 @@ function createGrid(gridSize) {
 };
 
 function resetGrid() {
+    randomcolor = false;
     allGridLines = document.querySelectorAll(".gridline");
     allGridLines.forEach(gridLine => {
         gridLine.remove();
     });
 
 };
-
-

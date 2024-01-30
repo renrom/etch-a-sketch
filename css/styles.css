@@ -23,14 +23,12 @@ body {
     border-radius: 2%;
     padding: 10px;
 	color: white;
-	
 }
 
 .gridline{
 	display: flex;
 	flex: 1;
 	justify-content: center;
-
 }
 
 .main {
@@ -41,18 +39,21 @@ body {
 }
 
 .resetbutton,
-.gridsizebutton {
-    background-color: #36517c;
+.gridsizebutton,
+.randomcolor {
+    background-color: #67ddab;
     border: none;
     margin: 10px;
-    padding: 10px 32px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
-    border-radius: 4%;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 7%;
     cursor: pointer;
     height: 30px;
-    color: white;
+    color: #018DA5;
+    font-size: 12px;
 }
